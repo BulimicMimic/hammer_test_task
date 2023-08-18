@@ -1,0 +1,31 @@
+version: '3'
+
+volumes:
+  pg_data:
+  static:
+
+services:
+  db:
+    image: postgres:13.10
+    env_file: .env
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    restart: on-failure
+
+  backend:
+    build: ./referral/
+    env_file: .env
+    volumes:
+      - static:/backend_static
+    depends_on:
+      - db
+    restart: on-failure
+
+  gateway:
+    build: ./gateway/
+    env_file: .env
+    ports:
+      - ${REFERRAL_PORT}:80
+    volumes:
+      - static:/static
+    restart: on-failure

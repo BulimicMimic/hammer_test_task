@@ -1,0 +1,338 @@
+{
+	"info": {
+		"_postman_id": "77401c54-6d90-48e1-ab42-8a163787e2fa",
+		"name": "Hammer_test_task",
+		"description": "POST [http://127.0.0.1:8000/api/v1/auth/signup/](http://127.0.0.1:8000/api/v1/auth/signup/)  \nАвторизация по номеру телефона:  \nДоступен всем.  \nДля удобства тестирования в ответ добавлена информация необходимая для отправки последующих запросов:  \nid - для запроса к конкретному профилю пользователя,  \nauthorization_code - для запроса на ввод кода авторизации,  \ninvite_code - для PATCH запроса активации инвайт кода реферальной системы,\n\nPOST [http://127.0.0.1:8000/api/v1/auth/token/](http://127.0.0.1:8000/api/v1/auth/token/)  \nЗапрос на ввод кода авторизации:  \nДоступен всем.  \nДля удобства тестирования в ответ добавлены jwt-токены, они будут необходимы при запросе на активацию инвайт кода.\n\nPATCH [http://127.0.0.1:8000/api/v1/users/27/](http://127.0.0.1:8000/api/v1/users/27/)  \nЗапрос на активацию инвайт кода:  \nДоступен только пользователю, который активирует код, необходим jwt-токен.\n\nGET [http://127.0.0.1:8000/api/v1/users/26/](http://127.0.0.1:8000/api/v1/users/26/)  \nЗапрос на профиль пользователя:  \nДоступен всем.\n\nDELETE [http://127.0.0.1:8000/api/v1/users/27/](http://127.0.0.1:8000/api/v1/users/27/)  \nЗапрос на удаление профиля пользователя:  \nДоступен только пользователю, чей профиль удаляется, необходим jwt-токен.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25677244"
+	},
+	"item": [
+		{
+			"name": "Add user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 5082edfa72cd1e8e0d705b97f4d593da2a26b6c5",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone_number\": \"+71111111111\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/auth/signup/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"signup",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authorize user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 5082edfa72cd1e8e0d705b97f4d593da2a26b6c5",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone_number\": \"+71111111111\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/auth/signup/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"signup",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add second user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 5082edfa72cd1e8e0d705b97f4d593da2a26b6c5",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone_number\": \"+71111111111\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/auth/signup/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"signup",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authorize second user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 5082edfa72cd1e8e0d705b97f4d593da2a26b6c5",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone_number\": \"+71111111111\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/auth/signup/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"signup",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activate invitational code",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkzMjI2MTAyLCJpYXQiOjE2OTIzNjIxMDIsImp0aSI6IjdiZDUzZDRlYmQyYzQ2MDU4ODkyMmRmYTcyNmM0ZWU5IiwidXNlcl9pZCI6MjJ9.yXQRpQtQqLA15SztyWctJYGbeh6HRjiPMsWBl_W5d8I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 5082edfa72cd1e8e0d705b97f4d593da2a26b6c5",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"activated_code\": \"0381e2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/users/25/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"25",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user profile",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 5082edfa72cd1e8e0d705b97f4d593da2a26b6c5",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/users/26/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"26",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkzMjI2MTAyLCJpYXQiOjE2OTIzNjIxMDIsImp0aSI6IjdiZDUzZDRlYmQyYzQ2MDU4ODkyMmRmYTcyNmM0ZWU5IiwidXNlcl9pZCI6MjJ9.yXQRpQtQqLA15SztyWctJYGbeh6HRjiPMsWBl_W5d8I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 5082edfa72cd1e8e0d705b97f4d593da2a26b6c5",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/users/27/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"27",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
